@@ -1,0 +1,135 @@
+
+<div class="container" >
+  <br>
+  <div class="row">
+    <div class="col-7">
+        <div class="row shadow p-3 mb-5 bg-white rounded" style="border: 0px solid black;height: 80px;width:100%;padding-top: 30px">
+            <br>
+             <div class=" col-3">
+         
+                 <input type="text" [(ngModel)]="city" placeholder="Enter City">
+             </div>
+             <div class=" offset-1 col-3">
+                 <input type="text" [(ngModel)]="country" placeholder="Enter Country">
+               </div>
+               <div class="offset-1 col-1">
+                   <button class="btn " (click)="showWeather()">Show</button>
+                 </div>
+                 <div class=" offset-1 col-1">
+                     <button class="btn " (click)="showFiveWeather()">5Day</button>
+                   </div>
+           </div>
+           <div class="row shadow p-3 mb-5 bg-white rounded" style="border: 0px solid black;height: 80px;width:100%;padding-top: 30px">
+              <br>
+               <div class=" col-3">
+           
+                   <input type="text" [(ngModel)]="zipcode" placeholder="Enter Zipcode" >
+               </div>
+               <div class=" offset-1 col-3">
+                  <input type="text" [(ngModel)]="countryz" placeholder="Enter Country">
+                </div>
+                 <div class="offset-1 col-1">
+                     <button class="btn " (click)="showWeatherByZip()">Show</button>
+                   </div>
+                   <div class=" offset-1 col-1">
+                      <button class="btn" (click)="showWeatherFiveByZip()">5Day</button>
+                    </div>
+             </div>
+    </div>
+    <div class="col-5">
+        <div *ngIf="mystatus" class="card bg-info text-white shadow p-3 mb-5  rounded" style="width: 36rem" >
+            <div class="card-body">
+                <h5 class="card-title">{{mylocweather.name}}</h5>
+                
+                <hr>
+              <div class="row">
+                <div class="col-7">
+                    <p class="card-text">Description: {{mylocweather.weather[0].description}}</p>
+                    <p class="card-text">Temparature: {{mylocweather.main.temp}}</p>
+                    <p class="card-text">Pressure: {{mylocweather.main.pressure}}</p>
+                    <p class="card-text">Wind Speed: {{mylocweather.wind.speed}}</p>
+                    
+                   
+                </div>
+                <div class="col-5">
+                    <img src="http://openweathermap.org/img/w/{{mylocweather.weather[0].icon}}.png" style="width:60%;height:60%">
+                    <h5 class="card-title">{{mylocweather.weather[0].main}}</h5>
+
+                </div>
+               
+              </div>
+             
+            </div>
+            </div>
+    </div>
+
+  </div>
+  <div *ngIf="statusone"  class="row ">
+    <div class="col-4">  
+        <div class="card bg-info text-white shadow p-3 mb-5  rounded" style="width: 36rem" >
+            <div class="card-body">
+                <h5 class="card-title">{{weather.name}}</h5>
+                <hr>
+              <div class="row">
+                <div class="col-7">
+                    <p class="card-text">Description: {{weather.weather[0].description}}</p>
+                    <p class="card-text">Temparature: {{weather.main.temp}}</p>
+                    <p class="card-text">Pressure: {{weather.main.pressure}}</p>
+                    <p class="card-text">Wind Speed: {{weather.wind.speed}}</p>
+                </div>
+                <div class="col-5">
+                    <img [src]="source" style="width:60%;height:60%">
+                    <h5 class="card-title">{{weather.weather[0].main}}</h5>
+                </div>
+              </div>
+            </div>
+            </div>
+    </div>
+  </div>
+
+  <div *ngIf="statustwo"  class=" box" >
+        <div class="card-b" *ngFor="let weather of weathers">
+            <div class="card-body card bg-info text-white shadow p-3 mb-5  rounded">
+                <h5 class="card-title">{{weather.name}}</h5>
+                <p class="card-title">{{weather.weather[0].main}}</p>
+                <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" style="width:50%;height:45%">
+                <hr> 
+                <p class="card-text">Description: {{weather.weather[0].description}}</p>
+                <p class="card-text">Temparature: {{weather.main.temp}}</p>
+                <p class="card-text">Pressure: {{weather.main.pressure}}</p>
+                <p class="card-text">Wind Speed: {{weather.wind.speed}}</p>
+            </div>
+        </div>
+              
+      </div>
+
+      <!-- <div class="box">
+        <div class="card-b">
+
+
+        </div>
+        <div class="card-b"> </div>
+        <div class="card-b"> </div>
+        <div class="card-b"> </div>
+        <div class="card-b"> </div>
+        <div class="card-b"> </div>
+        <div class="card-b"> </div>
+
+      </div> -->
+    
+      <!-- <div class="col-4">
+  
+      
+        <div  class="" style="width: 36rem" >
+           
+            </div>
+    </div> -->
+
+
+   
+ 
+
+</div>
+ 
+
+  

@@ -1,0 +1,55 @@
+<br>
+<div class="card" style="width: 36rem;border: 0px;cursor: pointer;" data-toggle="tooltip" data-placement="right" title="double click to change status"    >
+    <div class="card-body"
+     [ngStyle]="{'background-color':status==='true'?'lightblue':'lightcoral'}"
+     *ngIf="!visible" (dblclick)="changeStatus()">
+      <div class="row">
+        <div class="col-8">
+            <h5 class="card-title">{{note.title}}</h5>
+            <hr>
+        </div>
+        <div class="offset-2 col-2">
+          <div class="row">
+            <div class="col-6">
+                <fa-icon [icon]="faCoffee2" (click)="edit()" *ngIf="!visible" data-toggle="tooltip" data-placement="right" title="edit"   ></fa-icon>
+            </div>
+            <div class="col-6">
+                <fa-icon [icon]="faCoffee" (click)="delete()" data-toggle="tooltip" data-placement="right" title="delete"   ></fa-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="card-text">{{note.description}}</p>
+      <div class="row">
+        <div class="offset-9 col-3">
+          <p> {{note.addedOn | date:'mediumDate'}}</p>
+        </div>
+      </div>
+    
+    </div>
+    <div *ngIf="visible">
+        <form #noteForm="ngForm" (ngSubmit)="update()" style="width:90%;margin-left:20px;margin-bottom: 10px;margin-top:10px">
+            <div class="form-group">
+              <label for="title" class="text-dark">Title</label>
+              <input type="text" class="form-control"  name="title"  [(ngModel)]="note.title" >
+            </div>
+            <div class="form-group">
+              <label for="description" class="text-dark">Description</label>
+              <textarea  class="form-control"  name="description"  rows="3" [(ngModel)]="note.description"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-7">
+                  <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <div class="offset-2 col-3">
+                  <button class="btn btn-secondary" (click)="edit()" *ngIf="visible">Cancel</button>
+                </div>
+            </div>
+          </form>
+        </div>
+</div>
+
+    <br>
+
+
+    

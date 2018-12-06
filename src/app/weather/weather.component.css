@@ -1,0 +1,25 @@
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid lightblue;
+  }
+ .box{
+height: 400px;
+width: 1220px;
+overflow-x: scroll;
+overflow-y: hidden;
+white-space: nowrap;
+  }
+  .box::-webkit-scrollbar{
+      display: none;
+  }
+  .card-b{
+      display: inline-block;
+      background-color: #675e6b;
+      height:100%;
+      width:300px;
+     
+      margin-right: 10px;
+  }
+  

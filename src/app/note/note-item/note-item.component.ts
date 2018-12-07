@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
-import { NoteService } from '../note.service';
+
 import { DatePipe } from '@angular/common';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { NoteService } from 'src/app/note.service';
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',

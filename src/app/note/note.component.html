@@ -1,0 +1,34 @@
+<div >
+    <div class="row" style="padding-top: 40px" >
+        <div class="col-9">
+      <button class="btn btn-secondary" (click)="toggleForm()" *ngIf="!visible">Add Note</button>
+      <button class="btn btn-secondary" (click)="toggleForm()" *ngIf="visible">Cancel</button>
+
+      <div *ngIf="visible">
+      <form #noteForm="ngForm" (ngSubmit)="saveNote(noteForm.form.value);" style="margin-top:10px">
+          <div class="form-group">
+            <label for="title" class="text-light">Title</label>
+            <input type="text" class="form-control"  name="title"  ngModel >
+          </div>
+          <div class="form-group">
+            <label for="description"  class="text-light">Description</label>
+            <textarea  class="form-control"  name="description"  ngModel  rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+      </div>
+     
+    </div>
+
+  <div class="row">
+
+    <div class="col text-white" *ngFor="let note of notes ">
+      <app-note-item [Notes]="note" (updateEvent)="updateEventHander($event)" 
+                             
+      (deleteEvent)="deleteEventHandler($event)" 
+                                  (changeEvent)="changeEventHandler($event)"></app-note-item>
+    </div>
+
+  </div>
+</div>

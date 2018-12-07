@@ -1,0 +1,21 @@
+<div >
+   
+     <h5 class="text-white" style="padding-top: 40px">Guess {{count}}, Win the Game...!!!</h5><br>
+    <p class="text-white" >Below are the shuffled pictures of animals , but there are only three common pictures belong to Birds</p>
+    <p class="text-white" >Find them to win the jackpot</p>
+
+<div class="row" style="padding-top: 20px">
+
+  <div class="card-body" *ngFor="let a of arr" style="margin-top:10px" (click)="addToMyList(a)">
+    <div *ngIf="a.status=='hide'"  class="front img-thumbnail" style="width:200px;height:150px">
+      
+    </div>
+    <div *ngIf="a.status=='show'"  class="back">
+      <img class="img-thumbnail"
+      src="assets/img/{{a.image}}" alt="myimage" style="width:200px;height:150px" >
+    </div>
+  </div>
+</div>
+
+</div>
+

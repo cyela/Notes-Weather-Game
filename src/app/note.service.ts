@@ -14,22 +14,22 @@ export class NoteService {
    }
   
    postNote(note:any):any{
-    return  this.http.post('http://localhost:8086/JersseyDemo/note/addNote',note);
+    return  this.http.post('http://localhost:9999/JersseyDemo/note/addNote',note);
    }
    updateNote(note:any):any{
-    return  this.http.post('http://localhost:8086/JersseyDemo/note/updateNote',note);
+    return  this.http.post('http://localhost:9999/JersseyDemo/note/updateNote',note);
    }
 
    getNotes():any{
-    return  this.http.get('http://localhost:8086/JersseyDemo/note/getNote');
+    return  this.http.get('http://localhost:9999/JersseyDemo/note/getNote');
    }
 
    changeStatus(note:any):any{
-    return  this.http.post('http://localhost:8086/JersseyDemo/note/updateStatus',note);
+    return  this.http.post('http://localhost:9999/JersseyDemo/note/updateStatus',note);
    }
 
    delNote(note:any):any{
-    return  this.http.delete('http://localhost:8086/JersseyDemo/note/delNote/'+note);
+    return  this.http.delete('http://localhost:9999/JersseyDemo/note/delNote/'+note);
    }
 }
 
